@@ -31,6 +31,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -58,11 +59,11 @@
     <Compile Include="Repositories\AbilityScoreContext.cs" />
     <Compile Include="Repositories\CharacterContext.cs" />
     <Compile Include="Repositories\ClassContext.cs" />
+    <Compile Include="Repositories\Database.cs" />
     <Compile Include="Repositories\RaceContext.cs" />
     <Compile Include="Repositories\SkillContext.cs" />
     <Compile Include="Repositories\SpellContext.cs" />
     <Compile Include="Repositories\SubRaceContext.cs" />
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

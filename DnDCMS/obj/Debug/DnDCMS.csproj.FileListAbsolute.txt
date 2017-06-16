@@ -1,0 +1,8 @@
+D:\Programs\Google Drive\DnDCMS\DnDCMS\DnDCMS\bin\Debug\DnDCMS.exe.config
+D:\Programs\Google Drive\DnDCMS\DnDCMS\DnDCMS\bin\Debug\DnDCMS.exe
+D:\Programs\Google Drive\DnDCMS\DnDCMS\DnDCMS\bin\Debug\DnDCMS.pdb
+D:\Programs\Google Drive\DnDCMS\DnDCMS\DnDCMS\obj\Debug\DnDCMS.Form1.resources
+D:\Programs\Google Drive\DnDCMS\DnDCMS\DnDCMS\obj\Debug\DnDCMS.Properties.Resources.resources
+D:\Programs\Google Drive\DnDCMS\DnDCMS\DnDCMS\obj\Debug\DnDCMS.csproj.GenerateResource.Cache
+D:\Programs\Google Drive\DnDCMS\DnDCMS\DnDCMS\obj\Debug\DnDCMS.exe
+D:\Programs\Google Drive\DnDCMS\DnDCMS\DnDCMS\obj\Debug\DnDCMS.pdb
