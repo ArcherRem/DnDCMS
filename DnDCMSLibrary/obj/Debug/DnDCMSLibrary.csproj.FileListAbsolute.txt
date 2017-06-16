@@ -1,1 +1,5 @@
 D:\Programs\Google Drive\DnDCMS\DnDCMS\DnDCMSLibrary\obj\Debug\DnDCMSLibrary.csprojResolveAssemblyReference.cache
+D:\Programs\Google Drive\DnDCMS\DnDCMS\DnDCMSLibrary\bin\Debug\DnDCMSLibrary.dll
+D:\Programs\Google Drive\DnDCMS\DnDCMS\DnDCMSLibrary\bin\Debug\DnDCMSLibrary.pdb
+D:\Programs\Google Drive\DnDCMS\DnDCMS\DnDCMSLibrary\obj\Debug\DnDCMSLibrary.dll
+D:\Programs\Google Drive\DnDCMS\DnDCMS\DnDCMSLibrary\obj\Debug\DnDCMSLibrary.pdb

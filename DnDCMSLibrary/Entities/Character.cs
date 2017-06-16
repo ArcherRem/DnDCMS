@@ -8,45 +8,23 @@ namespace DnDCMSLibrary.Entities
 {
     class Character
     {
-        public string picturepath { get; private set; }
-        public string race { get; }
-        public string subrace { get; }
-        public string background { get; }
-        public string alignment { get; }
-        public int level { get; }
-        public int experience { get; }
-        public int currenthp { get; }
-        public int maxhp { get; }
-        public string haircolor { get; }
-        public string eyecolor { get; }
-        public string skincolor { get; }
-        public string gender { get; }
-        public string height { get; }
-        public string weight { get; }
-        public int age { get; }
-
-        public Character()
-        {
-
-        }
-        public Character(string picturepath, string race, string subrace, string background, string alignment, int experience, int currenthp, int maxhp, string haircolor, string eyecolor, string skincolor, string gender, string height, string weight, int age)
-        {
-            this.picturepath = picturepath;
-            this.race = race;
-            this.subrace = subrace;
-            this.background = background;
-            this.alignment = alignment;
-            this.experience = experience;
-            this.currenthp = currenthp;
-            this.maxhp = maxhp;
-            this.haircolor = haircolor;
-            this.eyecolor = eyecolor;
-            this.skincolor = skincolor;
-            this.gender = gender;
-            this.height = height;
-            this.weight = weight;
-            this.age = age;
-
-        }
+        public int id { get; set; }
+        public string name { get; set; }
+        public string picturepath { get; set; }
+        public Race race { get;  set; }
+        public SubRace subrace { get;  set; }
+        public string background { get;  set; }
+        public string alignment { get;  set; }
+        public int level { get;  set; }
+        public int experience { get;  set; }
+        public int currenthp { get;  set; }
+        public int maxhp { get;  set; }
+        public string haircolor { get;  set; }
+        public string eyecolor { get;  set; }
+        public string skincolor { get;  set; }
+        public string gender { get;  set; }
+        public string height { get;  set; }
+        public string weight { get;  set; }
+        public int age { get;  set; }
     }
 }
