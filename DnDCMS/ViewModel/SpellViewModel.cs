@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DnDCMSLibrary.Entities;
 
-namespace DnDCMSLibrary.Repositories
+namespace DnDCMS.ViewModel
 {
-    class RaceContext
+    class SpellViewModel
     {
+        public List<Spell> SpellList { get; set; }
     }
 }

@@ -50,10 +50,8 @@
     <Compile Include="Interfaces\IAbilityScoreRepository.cs" />
     <Compile Include="Interfaces\ICharacterRepository.cs" />
     <Compile Include="Interfaces\IClassRepository.cs" />
-    <Compile Include="Interfaces\IRaceRepository.cs" />
     <Compile Include="Interfaces\ISkillRepository.cs" />
     <Compile Include="Interfaces\ISpellRepository.cs" />
-    <Compile Include="Interfaces\ISubRaceRepository.cs" />
     <Compile Include="Logic\AbilityScoreLogic.cs" />
     <Compile Include="Logic\SpellLogic.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -61,10 +59,8 @@
     <Compile Include="Repositories\CharacterContext.cs" />
     <Compile Include="Repositories\ClassContext.cs" />
     <Compile Include="Repositories\Database.cs" />
-    <Compile Include="Repositories\RaceContext.cs" />
     <Compile Include="Repositories\SkillContext.cs" />
     <Compile Include="Repositories\SpellContext.cs" />
-    <Compile Include="Repositories\SubRaceContext.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
