@@ -6,3 +6,4 @@ D:\Programs\Google Drive\DnDCMS\DnDCMS\DnDCMS\obj\Debug\DnDCMS.Properties.Resour
 D:\Programs\Google Drive\DnDCMS\DnDCMS\DnDCMS\obj\Debug\DnDCMS.csproj.GenerateResource.Cache
 D:\Programs\Google Drive\DnDCMS\DnDCMS\DnDCMS\obj\Debug\DnDCMS.exe
 D:\Programs\Google Drive\DnDCMS\DnDCMS\DnDCMS\obj\Debug\DnDCMS.pdb
+D:\Programs\Google Drive\DnDCMS\DnDCMS\DnDCMS\obj\Debug\DnDCMS.csprojResolveAssemblyReference.cache

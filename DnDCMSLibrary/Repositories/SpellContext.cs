@@ -37,6 +37,31 @@ namespace DnDCMSLibrary.Repositories
                 throw ex;
             }
         }
+        public List<Spell> GetSearchedSpell(string query)
+        {
+            try
+            {
+                List<Spell> result = new List<Spell>();
+                using (SqlConnection sqlcon = Database.Connection)
+                {
+                    using (SqlCommand cmd = new SqlCommand(query, sqlcon))
+                    {
+                        using (SqlDataReader reader = cmd.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                result.Add(CreateSpellFromReader(reader));
+                            }
+                        }
+                    }
+                    return result;
+                }
+            }
+            catch (SqlException ex)
+            {
+                throw ex;
+            }
+        }
         private Spell CreateSpellFromReader(SqlDataReader reader)
         {
             Spell spell = new Spell()
