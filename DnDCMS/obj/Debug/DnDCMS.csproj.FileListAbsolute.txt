@@ -7,3 +7,7 @@ D:\Programs\Google Drive\DnDCMS\DnDCMS\DnDCMS\obj\Debug\DnDCMS.csproj.GenerateRe
 D:\Programs\Google Drive\DnDCMS\DnDCMS\DnDCMS\obj\Debug\DnDCMS.exe
 D:\Programs\Google Drive\DnDCMS\DnDCMS\DnDCMS\obj\Debug\DnDCMS.pdb
 D:\Programs\Google Drive\DnDCMS\DnDCMS\DnDCMS\obj\Debug\DnDCMS.csprojResolveAssemblyReference.cache
+D:\Programs\Google Drive\DnDCMS\DnDCMS\DnDCMS\obj\Debug\DnDCMS.View.DM.resources
+D:\Programs\Google Drive\DnDCMS\DnDCMS\DnDCMS\obj\Debug\DnDCMS.View.Player.resources
+D:\Programs\Google Drive\DnDCMS\DnDCMS\DnDCMS\bin\Debug\DnDCMSLibrary.dll
+D:\Programs\Google Drive\DnDCMS\DnDCMS\DnDCMS\bin\Debug\DnDCMSLibrary.pdb

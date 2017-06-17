@@ -44,7 +44,7 @@ namespace DnDCMSLibrary.Repositories
                 List<Spell> result = new List<Spell>();
                 using (SqlConnection sqlcon = Database.Connection)
                 {
-                    using (SqlCommand cmd = new SqlCommand(query, sqlcon))
+                    using (SqlCommand cmd = new SqlCommand("SELECT * FROM Spells " + query, sqlcon))
                     {
                         using (SqlDataReader reader = cmd.ExecuteReader())
                         {
@@ -72,7 +72,7 @@ namespace DnDCMSLibrary.Repositories
             type = reader["spelltype"].ToString(),
             ritual = Convert.ToBoolean(reader["ritual"]),
             effect = reader["effect"].ToString(),
-            castingtime = reader["casting time"].ToString(),
+            castingtime = reader["casting_time"].ToString(),
             range = reader["range"].ToString(),
             components = reader["components"].ToString(),
             duration = reader["duration"].ToString(),

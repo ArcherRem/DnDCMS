@@ -13,5 +13,10 @@
         public string range { get; set; }
         public string components { get; set; }
         public string duration { get; set; }
+
+        public override string ToString()
+        {
+            return name;
+        }
     }
 }

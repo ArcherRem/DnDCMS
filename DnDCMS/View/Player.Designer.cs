@@ -3676,6 +3676,7 @@
             this.lbPCSpellList.Name = "lbPCSpellList";
             this.lbPCSpellList.Size = new System.Drawing.Size(200, 563);
             this.lbPCSpellList.TabIndex = 38;
+            this.lbPCSpellList.SelectedIndexChanged += new System.EventHandler(this.lbPCSpellList_SelectedIndexChanged);
             // 
             // btnPCSearchSpell
             // 
@@ -3685,6 +3686,7 @@
             this.btnPCSearchSpell.TabIndex = 37;
             this.btnPCSearchSpell.Text = "Search";
             this.btnPCSearchSpell.UseVisualStyleBackColor = true;
+            this.btnPCSearchSpell.Click += new System.EventHandler(this.btnPCSearchSpell_Click);
             // 
             // cbPCSearchSpellType
             // 

@@ -9,7 +9,7 @@ using DnDCMSLibrary.Interfaces;
 
 namespace DnDCMSLibrary.Logic
 {
-    class AbilityScoreLogic
+    public class AbilityScoreLogic
     {
         private IAbilityScoreRepository repository = new AbilityScoreContext();
     }

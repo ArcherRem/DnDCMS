@@ -9,13 +9,17 @@ using DnDCMSLibrary.Interfaces;
 
 namespace DnDCMSLibrary.Logic
 {
-    class SpellLogic
+    public class SpellLogic
     {
         private ISpellRepository repository = new SpellContext();
 
         public SpellLogic(ISpellRepository repository)
         {
             this.repository = repository;
+        }
+        public List<Spell> GetAllSpells()
+        {
+            return repository.GetAllSpells();
         }
         public List<Spell> GetSearchedSpell(string query)
         {

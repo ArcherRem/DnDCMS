@@ -3,7 +3,7 @@ using DnDCMSLibrary.Entities;
 
 namespace DnDCMSLibrary.Interfaces
 {
-    interface ISpellRepository
+    public interface ISpellRepository
     {
         List<Spell> GetAllSpells();
 
