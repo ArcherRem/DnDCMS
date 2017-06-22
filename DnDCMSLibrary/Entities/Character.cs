@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace DnDCMSLibrary.Entities
 {
-    class Character
+    public class Character
     {
         public int id { get; set; }
         public string name { get; set; }
         public string picturepath { get; set; }
-        public Race race { get;  set; }
-        public SubRace subrace { get;  set; }
+        public string race { get;  set; }
+        public string subrace { get;  set; }
         public string background { get;  set; }
         public string alignment { get;  set; }
         public int level { get;  set; }
@@ -26,5 +26,10 @@ namespace DnDCMSLibrary.Entities
         public string height { get;  set; }
         public string weight { get;  set; }
         public int age { get;  set; }
+
+        public override string ToString()
+        {
+            return name;
+        }
     }
 }

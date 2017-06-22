@@ -9,7 +9,7 @@ using DnDCMSLibrary.Interfaces;
 
 namespace DnDCMSLibrary.Repositories
 {
-    class CharacterContext : ICharacterRepository
+    public class CharacterContext : ICharacterRepository
     {
         public List<Character> GetCharacter()
         {
@@ -18,7 +18,7 @@ namespace DnDCMSLibrary.Repositories
                 List<Character> result = new List<Character>();
                 using (SqlConnection sqlcon = Database.Connection)
                 {
-                    string query = "SELECT id, charactername FROM Character";
+                    string query = "SELECT * FROM Character";
                     using (SqlCommand cmd = new SqlCommand(query, sqlcon))
                     {
                         using (SqlDataReader reader = cmd.ExecuteReader())
@@ -44,8 +44,8 @@ namespace DnDCMSLibrary.Repositories
             id = Convert.ToInt32(reader["id"]),
             name = reader["charactername"].ToString(),
             picturepath = reader["picture_path"].ToString(),
-            race = (Race)Enum.Parse(typeof(Race), reader["race"].ToString()),
-            subrace = (SubRace)Enum.Parse(typeof(SubRace), reader["subrace"].ToString()),
+            race = reader["raceid"].ToString(),
+            subrace = reader["subrace"].ToString(),
             background = reader["background"].ToString(),
             alignment = reader["alignment"].ToString(),
             experience = Convert.ToInt32(reader["experience"]),

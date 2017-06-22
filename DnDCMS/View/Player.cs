@@ -17,17 +17,43 @@ namespace DnDCMS.View
 {
     public partial class Player : Form
     {
-        SpellViewModel viewModel = new SpellViewModel();
+        SpellViewModel SpellviewModel = new SpellViewModel();
         SpellLogic spell = new SpellLogic(new SpellContext());
+        CharacterViewModel CharacterviewModel = new CharacterViewModel();
+        CharacterLogic character = new CharacterLogic(new CharacterContext());
 
         public Player()
         {
             InitializeComponent();
-
-
+            CharacterviewModel.Characters = character.GetCharacter();
+            cbPCCharacterName.Items.AddRange(CharacterviewModel.Characters.ToArray());
+        }
+        /* Spellbook */
+        private void btnPCSearchSpell_Click(object sender, EventArgs e)
+        {
+            string query = CreateQuery();
+            lbPCSpellList.DataSource = (spell.GetSpell(query));
         }
 
-        private void btnPCSearchSpell_Click(object sender, EventArgs e)
+        private void lbPCSpellList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            SetSpellbookFields();
+        }
+
+        /* Methods */
+        public void SetSpellbookFields()
+        {
+            Spell selectedspell = (Spell)lbPCSpellList.SelectedItem;
+            tbPCSelectedSpellName.Text = selectedspell.name;
+            tbPCSelectedSpellRange.Text = selectedspell.range;
+            tbPCSelectedSpellType.Text = selectedspell.type;
+            tbPCSelectedSpellLevel.Text = selectedspell.level.ToString();
+            tbPCSelectedSpellDuration.Text = selectedspell.duration;
+            tbPCSelectedSpellCastingTime.Text = selectedspell.castingtime;
+            rtbPCSelectedSpellComponents.Text = selectedspell.components;
+            rtbPCSelectedSpellEffect.Text = selectedspell.effect;
+        }
+        public string CreateQuery()
         {
             string query = "";
             if (tbPCSearchSpellName.Text != "")
@@ -77,27 +103,8 @@ namespace DnDCMS.View
                 {
                     query = "WHERE ritual = " + chbPCSearchSpellRitual.Checked;
                 }
-
             }
-            else if (query == "")
-            {
-                lbPCSpellList.DataSource = (spell.GetAllSpells());
-
-            }
-            lbPCSpellList.DataSource = (spell.GetSearchedSpell(query));
-        }
-
-        private void lbPCSpellList_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            Spell selectedspell = (Spell)lbPCSpellList.SelectedItem;
-            tbPCSelectedSpellName.Text = selectedspell.name;
-            tbPCSelectedSpellRange.Text = selectedspell.range;
-            tbPCSelectedSpellType.Text = selectedspell.type;
-            tbPCSelectedSpellLevel.Text = selectedspell.level.ToString();
-            tbPCSelectedSpellDuration.Text = selectedspell.duration;
-            tbPCSelectedSpellCastingTime.Text = selectedspell.castingtime;
-            rtbPCSelectedSpellComponents.Text = selectedspell.components;
-            rtbPCSelectedSpellEffect.Text = selectedspell.effect;
+            return query;
         }
     }
 }

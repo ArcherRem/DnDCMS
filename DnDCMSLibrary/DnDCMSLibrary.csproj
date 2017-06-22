@@ -53,6 +53,7 @@
     <Compile Include="Interfaces\ISkillRepository.cs" />
     <Compile Include="Interfaces\ISpellRepository.cs" />
     <Compile Include="Logic\AbilityScoreLogic.cs" />
+    <Compile Include="Logic\CharacterLogic.cs" />
     <Compile Include="Logic\SpellLogic.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\AbilityScoreContext.cs" />

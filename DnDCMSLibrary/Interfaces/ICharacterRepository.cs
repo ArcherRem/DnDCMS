@@ -3,7 +3,7 @@ using DnDCMSLibrary.Entities;
 
 namespace DnDCMSLibrary.Interfaces
 {
-    interface ICharacterRepository
+    public interface ICharacterRepository
     {
         List<Character> GetCharacter();
     }

@@ -2,3 +2,9 @@ D:\Programs\Google Drive\DnDCMS\DnDCMS\DnDCMSLibrary\bin\Debug\DnDCMSLibrary.dll
 D:\Programs\Google Drive\DnDCMS\DnDCMS\DnDCMSLibrary\bin\Debug\DnDCMSLibrary.pdb
 D:\Programs\Google Drive\DnDCMS\DnDCMS\DnDCMSLibrary\obj\Debug\DnDCMSLibrary.dll
 D:\Programs\Google Drive\DnDCMS\DnDCMS\DnDCMSLibrary\obj\Debug\DnDCMSLibrary.pdb
+D:\Programs\Google Drive\DnDCMS\DnDCMS\DnDCMSLibrary\obj\Debug\DnDCMSLibrary.csprojResolveAssemblyReference.cache
+C:\Users\Remco\Google Drive\DnDCMS\DnDCMS\DnDCMSLibrary\bin\Debug\DnDCMSLibrary.dll
+C:\Users\Remco\Google Drive\DnDCMS\DnDCMS\DnDCMSLibrary\bin\Debug\DnDCMSLibrary.pdb
+C:\Users\Remco\Google Drive\DnDCMS\DnDCMS\DnDCMSLibrary\obj\Debug\DnDCMSLibrary.csprojResolveAssemblyReference.cache
+C:\Users\Remco\Google Drive\DnDCMS\DnDCMS\DnDCMSLibrary\obj\Debug\DnDCMSLibrary.dll
+C:\Users\Remco\Google Drive\DnDCMS\DnDCMS\DnDCMSLibrary\obj\Debug\DnDCMSLibrary.pdb

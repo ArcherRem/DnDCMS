@@ -5,8 +5,6 @@ namespace DnDCMSLibrary.Interfaces
 {
     public interface ISpellRepository
     {
-        List<Spell> GetAllSpells();
-
-        List<Spell> GetSearchedSpell(string query);
+        List<Spell> GetSpell(string query);
     }
 }

@@ -9,17 +9,19 @@ using DnDCMSLibrary.Interfaces;
 
 namespace DnDCMSLibrary.Logic
 {
-    public class SpellLogic
+    public class CharacterLogic
     {
-        private ISpellRepository repository = new SpellContext();
-
-        public SpellLogic(ISpellRepository repository)
+        private ICharacterRepository repository = new CharacterContext();
+        
+        public CharacterLogic(ICharacterRepository repository)
         {
             this.repository = repository;
         }
-        public List<Spell> GetSpell (string query)
+
+        public List<Character> GetCharacter()
         {
-            return repository.GetSpell(query);
+            return repository.GetCharacter();
         }
+
     }
 }

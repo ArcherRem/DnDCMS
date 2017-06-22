@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ViewModel\CharacterViewModel.cs" />
     <Compile Include="ViewModel\SpellViewModel.cs" />
     <Compile Include="View\DM.cs">
       <SubType>Form</SubType>

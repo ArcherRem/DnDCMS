@@ -11,33 +11,7 @@ namespace DnDCMSLibrary.Repositories
 {
     public class SpellContext : ISpellRepository
     {
-        public List<Spell> GetAllSpells()
-        {
-            try
-            {
-                List<Spell> result = new List<Spell>();
-                using (SqlConnection sqlcon = Database.Connection)
-                {
-                    string query = "SELECT * FROM Spells";
-                    using (SqlCommand cmd = new SqlCommand(query, sqlcon))
-                    {
-                        using (SqlDataReader reader = cmd.ExecuteReader())
-                        {
-                            while (reader.Read())
-                            {
-                                result.Add(CreateSpellFromReader(reader));
-                            }
-                        }
-                    }
-                    return result;
-                }
-            }
-            catch (SqlException ex)
-            {
-                throw ex;
-            }
-        }
-        public List<Spell> GetSearchedSpell(string query)
+        public List<Spell> GetSpell(string query)
         {
             try
             {

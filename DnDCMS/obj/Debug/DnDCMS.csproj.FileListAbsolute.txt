@@ -11,3 +11,16 @@ D:\Programs\Google Drive\DnDCMS\DnDCMS\DnDCMS\obj\Debug\DnDCMS.View.DM.resources
 D:\Programs\Google Drive\DnDCMS\DnDCMS\DnDCMS\obj\Debug\DnDCMS.View.Player.resources
 D:\Programs\Google Drive\DnDCMS\DnDCMS\DnDCMS\bin\Debug\DnDCMSLibrary.dll
 D:\Programs\Google Drive\DnDCMS\DnDCMS\DnDCMS\bin\Debug\DnDCMSLibrary.pdb
+C:\Users\Remco\Google Drive\DnDCMS\DnDCMS\DnDCMS\bin\Debug\DnDCMS.exe.config
+C:\Users\Remco\Google Drive\DnDCMS\DnDCMS\DnDCMS\bin\Debug\DnDCMS.exe
+C:\Users\Remco\Google Drive\DnDCMS\DnDCMS\DnDCMS\bin\Debug\DnDCMS.pdb
+C:\Users\Remco\Google Drive\DnDCMS\DnDCMS\DnDCMS\bin\Debug\DnDCMSLibrary.dll
+C:\Users\Remco\Google Drive\DnDCMS\DnDCMS\DnDCMS\bin\Debug\DnDCMSLibrary.pdb
+C:\Users\Remco\Google Drive\DnDCMS\DnDCMS\DnDCMS\obj\Debug\DnDCMS.csprojResolveAssemblyReference.cache
+C:\Users\Remco\Google Drive\DnDCMS\DnDCMS\DnDCMS\obj\Debug\DnDCMS.View.DM.resources
+C:\Users\Remco\Google Drive\DnDCMS\DnDCMS\DnDCMS\obj\Debug\DnDCMS.Form1.resources
+C:\Users\Remco\Google Drive\DnDCMS\DnDCMS\DnDCMS\obj\Debug\DnDCMS.Properties.Resources.resources
+C:\Users\Remco\Google Drive\DnDCMS\DnDCMS\DnDCMS\obj\Debug\DnDCMS.View.Player.resources
+C:\Users\Remco\Google Drive\DnDCMS\DnDCMS\DnDCMS\obj\Debug\DnDCMS.csproj.GenerateResource.Cache
+C:\Users\Remco\Google Drive\DnDCMS\DnDCMS\DnDCMS\obj\Debug\DnDCMS.exe
+C:\Users\Remco\Google Drive\DnDCMS\DnDCMS\DnDCMS\obj\Debug\DnDCMS.pdb
