@@ -3012,6 +3012,7 @@
             this.cbPCCharacterName.Name = "cbPCCharacterName";
             this.cbPCCharacterName.Size = new System.Drawing.Size(174, 21);
             this.cbPCCharacterName.TabIndex = 12;
+            this.cbPCCharacterName.SelectedIndexChanged += new System.EventHandler(this.cbPCCharacterName_SelectedIndexChanged);
             // 
             // pbPCPicture
             // 

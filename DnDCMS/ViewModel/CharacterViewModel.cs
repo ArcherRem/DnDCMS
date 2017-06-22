@@ -10,5 +10,7 @@ namespace DnDCMS.ViewModel
     class CharacterViewModel
     {
         public List<Character> Characters { get; set; }
+
+        public Character SelectedCharacter { get; set; }
     }
 }

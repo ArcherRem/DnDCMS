@@ -28,6 +28,11 @@ namespace DnDCMS.View
             CharacterviewModel.Characters = character.GetCharacter();
             cbPCCharacterName.Items.AddRange(CharacterviewModel.Characters.ToArray());
         }
+        /* CharacterSheet */
+        private void cbPCCharacterName_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            SetCharacterInfoFields();
+        }
         /* Spellbook */
         private void btnPCSearchSpell_Click(object sender, EventArgs e)
         {
@@ -41,6 +46,31 @@ namespace DnDCMS.View
         }
 
         /* Methods */
+
+        public void SetCharacterInfoFields()
+        {
+            if (cbPCCharacterName.SelectedItem != null)
+            {
+                CharacterviewModel.SelectedCharacter = CharacterviewModel.Characters.Find(x => x.name.Contains(cbPCCharacterName.Text));
+            }
+            int ArmorClass = 10;
+            cbPCRace.Text = CharacterviewModel.SelectedCharacter.race;
+            cbPCSubrace.Text = CharacterviewModel.SelectedCharacter.subrace;
+            cbPCAlignment.Text = CharacterviewModel.SelectedCharacter.alignment;
+            cbPCBackground.Text = CharacterviewModel.SelectedCharacter.background;
+            tbPCHairColor.Text = CharacterviewModel.SelectedCharacter.haircolor;
+            tbPCEyeColor.Text = CharacterviewModel.SelectedCharacter.eyecolor;
+            tbPCSkinColor.Text = CharacterviewModel.SelectedCharacter.skincolor;
+            cbPCGender.Text = CharacterviewModel.SelectedCharacter.gender;
+            tbPCHeight.Text = CharacterviewModel.SelectedCharacter.height;
+            tbPCWeight.Text = CharacterviewModel.SelectedCharacter.weight;
+            nudPCAge.Value = CharacterviewModel.SelectedCharacter.age;
+            nudPCExp.Value = CharacterviewModel.SelectedCharacter.experience;
+            nudPCHP.Value = CharacterviewModel.SelectedCharacter.currenthp;
+            nudPCHPMax.Value = CharacterviewModel.SelectedCharacter.maxhp;
+            cbPCGender.Text = CharacterviewModel.SelectedCharacter.gender;
+
+        }
         public void SetSpellbookFields()
         {
             Spell selectedspell = (Spell)lbPCSpellList.SelectedItem;
@@ -106,5 +136,7 @@ namespace DnDCMS.View
             }
             return query;
         }
+
+
     }
 }
