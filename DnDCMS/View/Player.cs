@@ -22,10 +22,12 @@ namespace DnDCMS.View
         SpellViewModel SpellviewModel = new SpellViewModel();
         CharacterViewModel CharacterviewModel = new CharacterViewModel();
         AbilityScoreViewModel AbilityScoreviewModel = new AbilityScoreViewModel();
+        SkillViewModel SkillviewModel = new SkillViewModel();
         /* Logics */
         SpellLogic spell = new SpellLogic(new SpellContext());
         CharacterLogic character = new CharacterLogic(new CharacterContext());
         AbilityScoreLogic abilityscore = new AbilityScoreLogic(new AbilityScoreContext());
+        SkillLogic skill = new SkillLogic(new SkillContext());
 
         public Player()
         {
@@ -37,6 +39,9 @@ namespace DnDCMS.View
         private void cbPCCharacterName_SelectedIndexChanged(object sender, EventArgs e)
         {
             SetCharacterInfoFields();
+            SetAbilityScores();
+            SetSpeedPerRace();
+            SetSkills();
         }
         /* Spellbook */
         private void btnPCSearchSpell_Click(object sender, EventArgs e)
@@ -57,8 +62,6 @@ namespace DnDCMS.View
             if (cbPCCharacterName.SelectedItem != null)
             {
                 CharacterviewModel.SelectedCharacter = CharacterviewModel.Characters.Find(x => x.name.Contains(cbPCCharacterName.Text));
-                AbilityScoreviewModel.AbilityScores = abilityscore.GetAbilityScores(CharacterviewModel.SelectedCharacter.id);
-                AbilityScoreviewModel.SelectedAbilityScore = AbilityScoreviewModel.AbilityScores[0];
             }   
             cbPCRace.Text = CharacterviewModel.SelectedCharacter.race;
             cbPCSubrace.Text = CharacterviewModel.SelectedCharacter.subrace;
@@ -75,13 +78,64 @@ namespace DnDCMS.View
             nudPCHP.Value = CharacterviewModel.SelectedCharacter.currenthp;
             nudPCHPMax.Value = CharacterviewModel.SelectedCharacter.maxhp;
             cbPCGender.Text = CharacterviewModel.SelectedCharacter.gender;
+
+
+        }
+        public void SetAbilityScores()
+        {
+            if (cbPCCharacterName.SelectedItem != null)
+            {
+                AbilityScoreviewModel.AbilityScores = abilityscore.GetAbilityScores(CharacterviewModel.SelectedCharacter.id);
+                AbilityScoreviewModel.SelectedAbilityScore = AbilityScoreviewModel.AbilityScores[0];
+            }
             nudPCStrength.Value = AbilityScoreviewModel.SelectedAbilityScore.strength;
             nudPCDexterity.Value = AbilityScoreviewModel.SelectedAbilityScore.dexterity;
             nudPCConstitution.Value = AbilityScoreviewModel.SelectedAbilityScore.constitution;
             nudPCIntelligence.Value = AbilityScoreviewModel.SelectedAbilityScore.intelligence;
             nudPCWisdom.Value = AbilityScoreviewModel.SelectedAbilityScore.wisdom;
             nudPCCharisma.Value = AbilityScoreviewModel.SelectedAbilityScore.charisma;
+        }
+        public void SetSpeedPerRace()
+        {
+            if (CharacterviewModel.SelectedCharacter.subrace == "Wood Elf")
+            {
+                nudPCSpeed.Value = 35;
+            }
+            else if (CharacterviewModel.SelectedCharacter.race == "Dwarf" || CharacterviewModel.SelectedCharacter.race == "Halfing" || CharacterviewModel.SelectedCharacter.race == "Gnome")
+            {
+                nudPCSpeed.Value = 25;
+            }
+            else
+            {
+                nudPCSpeed.Value = 30;
 
+            }
+        }
+        public void SetSkills()
+        {
+            if (cbPCCharacterName.SelectedItem != null)
+            {
+                SkillviewModel.Skills = skill.GetSkills(CharacterviewModel.SelectedCharacter.id);
+                SkillviewModel.SelectedSkill = SkillviewModel.Skills[0];
+            }
+            chbPCAcrobatics.Checked = SkillviewModel.SelectedSkill.acrobatics;
+            chbPCAnimalHandling.Checked = SkillviewModel.SelectedSkill.animalhandling;
+            chbPCArcana.Checked = SkillviewModel.SelectedSkill.arcana;
+            chbPCAthletics.Checked = SkillviewModel.SelectedSkill.athletics;
+            chbPCDeception.Checked = SkillviewModel.SelectedSkill.deception;
+            chbPCHistory.Checked = SkillviewModel.SelectedSkill.history;
+            chbPCInsight.Checked = SkillviewModel.SelectedSkill.insight;
+            chbPCIntimidation.Checked = SkillviewModel.SelectedSkill.intimidation;
+            chbPCInvestigation.Checked = SkillviewModel.SelectedSkill.investigation;
+            chbPCMedicine.Checked = SkillviewModel.SelectedSkill.medicine;
+            chbPCNature.Checked = SkillviewModel.SelectedSkill.nature;
+            chbPCPerception.Checked = SkillviewModel.SelectedSkill.perception;
+            chbPCPerformance.Checked = SkillviewModel.SelectedSkill.performance;
+            chbPCPersuasion.Checked = SkillviewModel.SelectedSkill.persuasion;
+            chbPCReligion.Checked = SkillviewModel.SelectedSkill.religion;
+            chbPCSlightOfHand.Checked = SkillviewModel.SelectedSkill.sleightofhand;
+            chbPCStealth.Checked = SkillviewModel.SelectedSkill.stealth;
+            chbPCSurvival.Checked = SkillviewModel.SelectedSkill.survival;
         }
         public void SetSpellbookFields()
         {

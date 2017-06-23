@@ -48,6 +48,7 @@
   <ItemGroup>
     <Compile Include="ViewModel\AbilityScoreViewModel.cs" />
     <Compile Include="ViewModel\CharacterViewModel.cs" />
+    <Compile Include="ViewModel\SkillViewModel.cs" />
     <Compile Include="ViewModel\SpellViewModel.cs" />
     <Compile Include="View\DM.cs">
       <SubType>Form</SubType>

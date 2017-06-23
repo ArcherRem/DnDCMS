@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DnDCMSLibrary.Entities
 {
-    class Skill
+    public class Skill
     {
         public bool acrobatics { get; set; }
         public bool animalhandling { get; set; }
@@ -26,31 +26,5 @@ namespace DnDCMSLibrary.Entities
         public bool sleightofhand { get; set; }
         public bool stealth { get; set; }
         public bool survival { get; set; }
-
-        public Skill()
-        {
-
-        }
-        public Skill(bool acrobatics, bool animalhandling, bool arcana, bool athletics, bool deception, bool history, bool insight, bool intimidation, bool investigation, bool medicine, bool nature, bool perception, bool performance, bool persuasion, bool religion, bool sleightofhand, bool stealth, bool survival)
-        {
-            this.acrobatics = acrobatics;
-            this.animalhandling = animalhandling;
-            this.arcana = arcana;
-            this.athletics = athletics;
-            this.deception = deception;
-            this.history = history;
-            this.insight = insight;
-            this.intimidation = intimidation;
-            this.investigation = investigation;
-            this.medicine = medicine;
-            this.nature = nature;
-            this.perception = perception;
-            this.performance = performance;
-            this.persuasion = persuasion;
-            this.religion = religion;
-            this.sleightofhand = sleightofhand;
-            this.stealth = stealth;
-            this.survival = survival;
-        }
     }
 }
