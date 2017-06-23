@@ -12,5 +12,15 @@ namespace DnDCMSLibrary.Logic
     public class AbilityScoreLogic
     {
         private IAbilityScoreRepository repository = new AbilityScoreContext();
+
+        public AbilityScoreLogic(IAbilityScoreRepository repository)
+        {
+            this.repository = repository;
+        }
+
+        public List<AbilityScore> GetAbilityScores(int id)
+        {
+            return repository.GetAbilityScores(id);
+        }
     }
 }

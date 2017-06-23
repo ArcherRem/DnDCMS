@@ -7,7 +7,8 @@ using DnDCMSLibrary.Entities;
 
 namespace DnDCMSLibrary.Interfaces
 {
-    interface IAbilityScoreRepository
+    public interface IAbilityScoreRepository
     {
+        List<AbilityScore> GetAbilityScores(int id);
     }
 }

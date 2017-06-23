@@ -7,12 +7,10 @@ using DnDCMSLibrary.Entities;
 
 namespace DnDCMS.ViewModel
 {
-    class CharacterViewModel
+    public class AbilityScoreViewModel
     {
-        public List<Character> Characters { get; set; }
+        public List<AbilityScore> AbilityScores { get; set; }
 
-        public Character SelectedCharacter { get; set; }
-
-
+        public AbilityScore SelectedAbilityScore { get; set; }
     }
 }

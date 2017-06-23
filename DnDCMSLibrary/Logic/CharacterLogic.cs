@@ -22,6 +22,10 @@ namespace DnDCMSLibrary.Logic
         {
             return repository.GetCharacter();
         }
+        public List<Character> GetCharacterByID(int id)
+        {
+            return repository.GetCharacterByID(id);
+        }
 
     }
 }

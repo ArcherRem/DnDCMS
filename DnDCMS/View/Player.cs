@@ -11,16 +11,21 @@ using DnDCMS.ViewModel;
 using DnDCMSLibrary.Logic;
 using DnDCMSLibrary.Entities;
 using DnDCMSLibrary.Repositories;
+using DnDCMSLibrary.Interfaces;
 
 
 namespace DnDCMS.View
 {
     public partial class Player : Form
     {
+        /* ViewModels */
         SpellViewModel SpellviewModel = new SpellViewModel();
-        SpellLogic spell = new SpellLogic(new SpellContext());
         CharacterViewModel CharacterviewModel = new CharacterViewModel();
+        AbilityScoreViewModel AbilityScoreviewModel = new AbilityScoreViewModel();
+        /* Logics */
+        SpellLogic spell = new SpellLogic(new SpellContext());
         CharacterLogic character = new CharacterLogic(new CharacterContext());
+        AbilityScoreLogic abilityscore = new AbilityScoreLogic(new AbilityScoreContext());
 
         public Player()
         {
@@ -52,8 +57,9 @@ namespace DnDCMS.View
             if (cbPCCharacterName.SelectedItem != null)
             {
                 CharacterviewModel.SelectedCharacter = CharacterviewModel.Characters.Find(x => x.name.Contains(cbPCCharacterName.Text));
-            }
-            int ArmorClass = 10;
+                AbilityScoreviewModel.AbilityScores = abilityscore.GetAbilityScores(CharacterviewModel.SelectedCharacter.id);
+                AbilityScoreviewModel.SelectedAbilityScore = AbilityScoreviewModel.AbilityScores[0];
+            }   
             cbPCRace.Text = CharacterviewModel.SelectedCharacter.race;
             cbPCSubrace.Text = CharacterviewModel.SelectedCharacter.subrace;
             cbPCAlignment.Text = CharacterviewModel.SelectedCharacter.alignment;
@@ -69,6 +75,12 @@ namespace DnDCMS.View
             nudPCHP.Value = CharacterviewModel.SelectedCharacter.currenthp;
             nudPCHPMax.Value = CharacterviewModel.SelectedCharacter.maxhp;
             cbPCGender.Text = CharacterviewModel.SelectedCharacter.gender;
+            nudPCStrength.Value = AbilityScoreviewModel.SelectedAbilityScore.strength;
+            nudPCDexterity.Value = AbilityScoreviewModel.SelectedAbilityScore.dexterity;
+            nudPCConstitution.Value = AbilityScoreviewModel.SelectedAbilityScore.constitution;
+            nudPCIntelligence.Value = AbilityScoreviewModel.SelectedAbilityScore.intelligence;
+            nudPCWisdom.Value = AbilityScoreviewModel.SelectedAbilityScore.wisdom;
+            nudPCCharisma.Value = AbilityScoreviewModel.SelectedAbilityScore.charisma;
 
         }
         public void SetSpellbookFields()

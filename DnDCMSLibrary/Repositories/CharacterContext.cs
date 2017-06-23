@@ -37,6 +37,33 @@ namespace DnDCMSLibrary.Repositories
                 throw ex;
             }
         }
+        public List<Character> GetCharacterByID(int id)
+        {
+            try
+            {
+                List<Character> result = new List<Character>();
+                using (SqlConnection sqlcon = Database.Connection)
+                {
+                    string query = "SELECT * FROM Character WHERE id = @id";
+                    using (SqlCommand cmd = new SqlCommand(query, sqlcon))
+                    {
+                        cmd.Parameters.AddWithValue("@id", id);
+                        using (SqlDataReader reader = cmd.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                result.Add(CreateCharacterFromReader(reader));
+                            }
+                        }
+                    }
+                    return result;
+                }
+            }
+            catch (SqlException ex)
+            {
+                throw ex;
+            }
+        }
         private Character CreateCharacterFromReader(SqlDataReader reader)
         {
             Character character = new Character()
@@ -44,7 +71,7 @@ namespace DnDCMSLibrary.Repositories
             id = Convert.ToInt32(reader["id"]),
             name = reader["charactername"].ToString(),
             picturepath = reader["picture_path"].ToString(),
-            race = reader["raceid"].ToString(),
+            race = reader["race"].ToString(),
             subrace = reader["subrace"].ToString(),
             background = reader["background"].ToString(),
             alignment = reader["alignment"].ToString(),
