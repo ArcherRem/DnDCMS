@@ -47,6 +47,10 @@ namespace DnDCMS.View
             SetSpeedPerRace();
             SetSkills();
             SetLevel();
+            tbPCProficiencyBonus.Text = Proficiency().ToString();
+            SkillProficiency();
+            SetSavingThrow();
+            ArmorClass();
         }
         /* Spellbook */
         private void btnPCSearchSpell_Click(object sender, EventArgs e)
@@ -67,7 +71,7 @@ namespace DnDCMS.View
             if (cbPCCharacterName.SelectedItem != null)
             {
                 CharacterviewModel.SelectedCharacter = CharacterviewModel.Characters.Find(x => x.name.Contains(cbPCCharacterName.Text));
-            }   
+            }
             cbPCRace.Text = CharacterviewModel.SelectedCharacter.race;
             cbPCSubrace.Text = CharacterviewModel.SelectedCharacter.subrace;
             cbPCAlignment.Text = CharacterviewModel.SelectedCharacter.alignment;
@@ -174,6 +178,32 @@ namespace DnDCMS.View
         {
             int totallevel = ClassviewModel.SelectedClass.Barbarian + ClassviewModel.SelectedClass.Bard + ClassviewModel.SelectedClass.Cleric + ClassviewModel.SelectedClass.Druid + ClassviewModel.SelectedClass.Fighter + ClassviewModel.SelectedClass.Monk + ClassviewModel.SelectedClass.Paladin + ClassviewModel.SelectedClass.Ranger + ClassviewModel.SelectedClass.Rogue + ClassviewModel.SelectedClass.Sorcerer + ClassviewModel.SelectedClass.Warlock + ClassviewModel.SelectedClass.Wizard;
             return totallevel;
+        }
+        public int Proficiency()
+        {
+            int proficiency = 0;
+            int totallevel = Totallevel();
+            if (totallevel < 5)
+            {
+                proficiency = 2;
+            }
+            else if (totallevel >= 5 && totallevel < 9)
+            {
+                proficiency = 3;
+            }
+            else if (totallevel >= 9 && totallevel < 13)
+            {
+                proficiency = 4;
+            }
+            else if (totallevel >= 13 && totallevel < 17)
+            {
+                proficiency = 5;
+            }
+            else if (totallevel >= 17 && totallevel < 21)
+            {
+                proficiency = 6;
+            }
+            return proficiency;
         }
         public void SetSpellbookFields()
         {
@@ -299,6 +329,331 @@ namespace DnDCMS.View
 
             return chamod;
 
+        }
+        public void SkillProficiency()
+        {
+            int acrobatics;
+            int animalhandling;
+            int arcana;
+            int athletics;
+            int deception;
+            int history;
+            int insight;
+            int intimidation;
+            int investigation;
+            int medicine;
+            int nature;
+            int perception;
+            int performance;
+            int persuasion;
+            int religion;
+            int sleightofhand;
+            int stealth;
+            int survival;
+            int passiveperception;
+
+            if (tbPCProficiencyBonus.Text != "")
+            {
+                if (chbPCAcrobatics.Checked)
+                {
+                    acrobatics = Convert.ToInt32(tbPCDexterityMod.Text) + Convert.ToInt32(tbPCProficiencyBonus.Text);
+                    tbPCAcrobatics.Text = acrobatics.ToString();
+
+                }
+                else
+                {
+                    tbPCAcrobatics.Text = tbPCDexterityMod.Text;
+                }
+                if (chbPCAnimalHandling.Checked)
+                {
+                    animalhandling = Convert.ToInt32(tbPCWisdomMod.Text) + Convert.ToInt32(tbPCProficiencyBonus.Text);
+                    tbPCAnimalHandling.Text = animalhandling.ToString();
+                }
+                else
+                {
+                    tbPCAnimalHandling.Text = tbPCWisdomMod.Text;
+                }
+                if (chbPCArcana.Checked)
+                {
+                    arcana = Convert.ToInt32(tbPCIntelligenceMod.Text) + Convert.ToInt32(tbPCProficiencyBonus.Text);
+                    tbPCArcana.Text = arcana.ToString();
+                }
+                else
+                {
+                    tbPCArcana.Text = tbPCIntelligenceMod.Text;
+                }
+                if (chbPCAthletics.Checked)
+                {
+                    athletics = Convert.ToInt32(tbPCStrengthMod.Text) + Convert.ToInt32(tbPCProficiencyBonus.Text);
+                    tbPCAthletics.Text = athletics.ToString();
+                }
+                else
+                {
+                    tbPCAthletics.Text = tbPCStrengthMod.Text;
+                }
+                if (chbPCDeception.Checked)
+                {
+                    deception = Convert.ToInt32(tbPCCharismaMod.Text) + Convert.ToInt32(tbPCProficiencyBonus.Text);
+                    tbPCDeception.Text = deception.ToString();
+                }
+                else
+                {
+                    tbPCDeception.Text = tbPCCharismaMod.Text;
+                }
+                if (chbPCHistory.Checked)
+                {
+                    history = Convert.ToInt32(tbPCIntelligenceMod.Text) + Convert.ToInt32(tbPCProficiencyBonus.Text);
+                    tbPCHistory.Text = history.ToString();
+                }
+                else
+                {
+                    tbPCHistory.Text = tbPCIntelligenceMod.Text;
+                }
+                if (chbPCInsight.Checked)
+                {
+                    insight = Convert.ToInt32(tbPCWisdomMod.Text) + Convert.ToInt32(tbPCProficiencyBonus.Text);
+                    tbPCInsight.Text = insight.ToString();
+                }
+                else
+                {
+                    tbPCInsight.Text = tbPCWisdomMod.Text;
+                }
+                if (chbPCIntimidation.Checked)
+                {
+                    intimidation = Convert.ToInt32(tbPCCharismaMod.Text) + Convert.ToInt32(tbPCProficiencyBonus.Text);
+                    tbPCIntimidation.Text = intimidation.ToString();
+                }
+                else
+                {
+                    tbPCIntimidation.Text = tbPCCharismaMod.Text;
+                }
+                if (chbPCInvestigation.Checked)
+                {
+                    investigation = Convert.ToInt32(tbPCIntelligenceMod.Text) + Convert.ToInt32(tbPCProficiencyBonus.Text);
+                    tbPCInvestigation.Text = investigation.ToString();
+                }
+                else
+                {
+                    tbPCInvestigation.Text = tbPCIntelligenceMod.Text;
+                }
+                if (chbPCMedicine.Checked)
+                {
+                    medicine = Convert.ToInt32(tbPCWisdomMod.Text) + Convert.ToInt32(tbPCProficiencyBonus.Text);
+                    tbPCMedicine.Text = medicine.ToString();
+                }
+                else
+                {
+                    tbPCMedicine.Text = tbPCWisdomMod.Text;
+                }
+                if (chbPCNature.Checked)
+                {
+                    nature = Convert.ToInt32(tbPCIntelligenceMod.Text) + Convert.ToInt32(tbPCProficiencyBonus.Text);
+                    tbPCNature.Text = nature.ToString();
+                }
+                else
+                {
+                    tbPCNature.Text = tbPCIntelligenceMod.Text;
+                }
+                if (chbPCPerception.Checked)
+                {
+                    perception = Convert.ToInt32(tbPCWisdomMod.Text) + Convert.ToInt32(tbPCProficiencyBonus.Text);
+                    tbPCPerception.Text = perception.ToString();
+                }
+                else
+                {
+                    tbPCPerception.Text = tbPCWisdomMod.Text;
+                }
+                if (chbPCPerformance.Checked)
+                {
+                    performance = Convert.ToInt32(tbPCCharismaMod.Text) + Convert.ToInt32(tbPCProficiencyBonus.Text);
+                    tbPCPerformance.Text = performance.ToString();
+                }
+                else
+                {
+                    tbPCPerformance.Text = tbPCCharismaMod.Text;
+                }
+                if (chbPCPersuasion.Checked)
+                {
+                    persuasion = Convert.ToInt32(tbPCCharismaMod.Text) + Convert.ToInt32(tbPCProficiencyBonus.Text);
+                    tbPCPersuasion.Text = persuasion.ToString();
+                }
+                else
+                {
+                    tbPCPersuasion.Text = tbPCCharismaMod.Text;
+                }
+                if (chbPCReligion.Checked)
+                {
+                    religion = Convert.ToInt32(tbPCIntelligenceMod.Text) + Convert.ToInt32(tbPCProficiencyBonus.Text);
+                    tbPCReligion.Text = religion.ToString();
+                }
+                else
+                {
+                    tbPCReligion.Text = tbPCIntelligenceMod.Text;
+                }
+                if (chbPCSlightOfHand.Checked)
+                {
+                    sleightofhand = Convert.ToInt32(tbPCDexterityMod.Text) + Convert.ToInt32(tbPCProficiencyBonus.Text);
+                    tbPCSlightOfHand.Text = sleightofhand.ToString();
+                }
+                else
+                {
+                    tbPCSlightOfHand.Text = tbPCDexterityMod.Text;
+                }
+                if (chbPCStealth.Checked)
+                {
+                    stealth = Convert.ToInt32(tbPCDexterityMod.Text) + Convert.ToInt32(tbPCProficiencyBonus.Text);
+                    tbPCStealth.Text = stealth.ToString();
+                }
+                else
+                {
+                    tbPCStealth.Text = tbPCDexterityMod.Text;
+                }
+                if (chbPCSurvival.Checked)
+                {
+                    survival = Convert.ToInt32(tbPCWisdomMod.Text) + Convert.ToInt32(tbPCProficiencyBonus.Text);
+                    tbPCSurvival.Text = survival.ToString();
+                }
+                else
+                {
+                    tbPCSurvival.Text = tbPCWisdomMod.Text;
+                }
+
+                passiveperception = 10 + Convert.ToInt32(tbPCPerception.Text);
+                tbPCPassivePerception.Text = Convert.ToString(passiveperception);
+            }
+        }
+        public void SetSavingThrow()
+        {
+            int strengthsave;
+            int dexteritysave;
+            int constitutionsave;
+            int intelligencesave;
+            int wisdomsave;
+            int charismasave;
+
+            if (nudPCBarbarian.Value >= 1)
+            {
+                chbPCStrengthSave.Checked = true;
+                chbPCConstitutionSave.Checked = true;
+            }
+            else if (nudPCBard.Value >= 1)
+            {
+                chbPCDexteritySave.Checked = true;
+                chbPCCharismaSave.Checked = true;
+            }
+            else if (nudPCCleric.Value >= 1)
+            {
+                chbPCWisdomSave.Checked = true;
+                chbPCCharismaSave.Checked = true;
+            }
+            else if (nudPCDruid.Value >= 1)
+            {
+                chbPCIntelligenceSave.Checked = true;
+                chbPCWisdomSave.Checked = true;
+            }
+            else if (nudPCFighter.Value >= 1)
+            {
+                chbPCStrengthSave.Checked = true;
+                chbPCConstitutionSave.Checked = true;
+            }
+            else if (nudPCMonk.Value >= 1)
+            {
+                chbPCStrengthSave.Checked = true;
+                chbPCDexteritySave.Checked = true;
+            }
+            else if (nudPCPaladin.Value >= 1)
+            {
+                chbPCWisdomSave.Checked = true;
+                chbPCCharismaSave.Checked = true;
+            }
+            else if (nudPCRanger.Value >= 1)
+            {
+                chbPCStrengthSave.Checked = true;
+                chbPCDexteritySave.Checked = true;
+            }
+            else if (nudPCRogue.Value >= 1)
+            {
+                chbPCDexteritySave.Checked = true;
+                chbPCIntelligenceSave.Checked = true;
+            }
+            else if (nudPCSorcerer.Value >= 1)
+            {
+                chbPCConstitutionSave.Checked = true;
+                chbPCCharismaSave.Checked = true;
+            }
+            else if (nudPCWarlock.Value >= 1)
+            {
+                chbPCWisdomSave.Checked = true;
+                chbPCCharismaSave.Checked = true;
+            }
+            else if (nudPCWizard.Value >= 1)
+            {
+                chbPCIntelligenceSave.Checked = true;
+                chbPCWisdomSave.Checked = true;
+            }
+            if (tbPCProficiencyBonus.Text != "")
+            {
+                if (chbPCStrengthSave.Checked)
+                {
+                    strengthsave = Convert.ToInt32(tbPCStrengthMod.Text) + Convert.ToInt32(tbPCProficiencyBonus.Text);
+                    tbPCStrengthSave.Text = strengthsave.ToString();
+                }
+                else
+                {
+                    tbPCStrengthSave.Text = tbPCStrengthMod.Text;
+                }
+                if (chbPCDexteritySave.Checked)
+                {
+                    dexteritysave = Convert.ToInt32(tbPCDexterityMod.Text) + Convert.ToInt32(tbPCProficiencyBonus.Text);
+                    tbPCDexteritySave.Text = dexteritysave.ToString();
+                }
+                else
+                {
+                    tbPCDexteritySave.Text = tbPCDexterityMod.Text;
+                }
+                if (chbPCConstitutionSave.Checked)
+                {
+                    constitutionsave = Convert.ToInt32(tbPCConstitutionMod.Text) + Convert.ToInt32(tbPCProficiencyBonus.Text);
+                    tbPCConstitutionSave.Text = constitutionsave.ToString();
+                }
+                else
+                {
+                    tbPCConstitutionSave.Text = tbPCConstitutionMod.Text;
+                }
+                if (chbPCIntelligenceSave.Checked)
+                {
+                    intelligencesave = Convert.ToInt32(tbPCIntelligenceMod.Text) + Convert.ToInt32(tbPCProficiencyBonus.Text);
+                    tbPCIntelligenceSave.Text = intelligencesave.ToString();
+                }
+                else
+                {
+                    tbPCIntelligenceSave.Text = tbPCIntelligenceMod.Text;
+                }
+                if (chbPCWisdomSave.Checked)
+                {
+                    wisdomsave = Convert.ToInt32(tbPCWisdomMod.Text) + Convert.ToInt32(tbPCProficiencyBonus.Text);
+                    tbPCWisdomSave.Text = wisdomsave.ToString();
+                }
+                else
+                {
+                    tbPCWisdomSave.Text = tbPCWisdomMod.Text;
+                }
+                if (chbPCCharismaSave.Checked)
+                {
+                    charismasave = Convert.ToInt32(tbPCCharismaMod.Text) + Convert.ToInt32(tbPCProficiencyBonus.Text);
+                    tbPCCharismaSave.Text = charismasave.ToString();
+                }
+                else
+                {
+                    tbPCCharismaSave.Text = tbPCCharismaMod.Text;
+                }
+            }
+        }
+        public void ArmorClass()
+        {
+            int armorclass = 10;
+            armorclass = armorclass + Convert.ToInt32(tbPCDexterityMod.Text);
+            tbPCArmorClass.Text = armorclass.ToString();
         }
     }
 }
