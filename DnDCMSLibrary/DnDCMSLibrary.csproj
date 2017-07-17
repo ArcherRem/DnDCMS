@@ -46,7 +46,6 @@
     <Compile Include="Entities\Class.cs" />
     <Compile Include="Entities\Skill.cs" />
     <Compile Include="Entities\Spell.cs" />
-    <Compile Include="Enums.cs" />
     <Compile Include="Interfaces\IAbilityScoreRepository.cs" />
     <Compile Include="Interfaces\ICharacterRepository.cs" />
     <Compile Include="Interfaces\IClassRepository.cs" />
@@ -54,6 +53,7 @@
     <Compile Include="Interfaces\ISpellRepository.cs" />
     <Compile Include="Logic\AbilityScoreLogic.cs" />
     <Compile Include="Logic\CharacterLogic.cs" />
+    <Compile Include="Logic\ClassLogic.cs" />
     <Compile Include="Logic\SkillLogic.cs" />
     <Compile Include="Logic\SpellLogic.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

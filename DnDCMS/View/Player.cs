@@ -14,6 +14,7 @@ using DnDCMSLibrary.Repositories;
 using DnDCMSLibrary.Interfaces;
 
 
+
 namespace DnDCMS.View
 {
     public partial class Player : Form
@@ -23,11 +24,14 @@ namespace DnDCMS.View
         CharacterViewModel CharacterviewModel = new CharacterViewModel();
         AbilityScoreViewModel AbilityScoreviewModel = new AbilityScoreViewModel();
         SkillViewModel SkillviewModel = new SkillViewModel();
+        ClassViewModel ClassviewModel = new ClassViewModel();
+
         /* Logics */
         SpellLogic spell = new SpellLogic(new SpellContext());
         CharacterLogic character = new CharacterLogic(new CharacterContext());
         AbilityScoreLogic abilityscore = new AbilityScoreLogic(new AbilityScoreContext());
         SkillLogic skill = new SkillLogic(new SkillContext());
+        ClassLogic classs = new ClassLogic(new ClassContext());
 
         public Player()
         {
@@ -42,6 +46,7 @@ namespace DnDCMS.View
             SetAbilityScores();
             SetSpeedPerRace();
             SetSkills();
+            SetLevel();
         }
         /* Spellbook */
         private void btnPCSearchSpell_Click(object sender, EventArgs e)
@@ -94,6 +99,12 @@ namespace DnDCMS.View
             nudPCIntelligence.Value = AbilityScoreviewModel.SelectedAbilityScore.intelligence;
             nudPCWisdom.Value = AbilityScoreviewModel.SelectedAbilityScore.wisdom;
             nudPCCharisma.Value = AbilityScoreviewModel.SelectedAbilityScore.charisma;
+            tbPCStrengthMod.Text = StrengthModifier(nudPCStrength.Value).ToString();
+            tbPCDexterityMod.Text = DexModifier(nudPCDexterity.Value).ToString();
+            tbPCConstitutionMod.Text = ConModifier(nudPCConstitution.Value).ToString();
+            tbPCIntelligenceMod.Text = IntModifier(nudPCIntelligence.Value).ToString();
+            tbPCWisdomMod.Text = WisModifier(nudPCWisdom.Value).ToString();
+            tbPCCharismaMod.Text = ChaModifier(nudPCCharisma.Value).ToString();
         }
         public void SetSpeedPerRace()
         {
@@ -136,6 +147,33 @@ namespace DnDCMS.View
             chbPCSlightOfHand.Checked = SkillviewModel.SelectedSkill.sleightofhand;
             chbPCStealth.Checked = SkillviewModel.SelectedSkill.stealth;
             chbPCSurvival.Checked = SkillviewModel.SelectedSkill.survival;
+        }
+
+        public void SetLevel()
+        {
+            if (cbPCCharacterName.SelectedItem != null)
+            {
+                ClassviewModel.Class = classs.GetClass(CharacterviewModel.SelectedCharacter.id);
+                ClassviewModel.SelectedClass = ClassviewModel.Class[0];
+            }
+            nudPCBarbarian.Value = ClassviewModel.SelectedClass.Barbarian;
+            nudPCBard.Value = ClassviewModel.SelectedClass.Bard;
+            nudPCCleric.Value = ClassviewModel.SelectedClass.Cleric;
+            nudPCDruid.Value = ClassviewModel.SelectedClass.Druid;
+            nudPCFighter.Value = ClassviewModel.SelectedClass.Fighter;
+            nudPCMonk.Value = ClassviewModel.SelectedClass.Monk;
+            nudPCPaladin.Value = ClassviewModel.SelectedClass.Paladin;
+            nudPCRanger.Value = ClassviewModel.SelectedClass.Ranger;
+            nudPCRogue.Value = ClassviewModel.SelectedClass.Rogue;
+            nudPCSorcerer.Value = ClassviewModel.SelectedClass.Sorcerer;
+            nudPCWarlock.Value = ClassviewModel.SelectedClass.Warlock;
+            nudPCWizard.Value = ClassviewModel.SelectedClass.Wizard;
+            tbPCLevel.Text = Totallevel().ToString();
+        }
+        public int Totallevel()
+        {
+            int totallevel = ClassviewModel.SelectedClass.Barbarian + ClassviewModel.SelectedClass.Bard + ClassviewModel.SelectedClass.Cleric + ClassviewModel.SelectedClass.Druid + ClassviewModel.SelectedClass.Fighter + ClassviewModel.SelectedClass.Monk + ClassviewModel.SelectedClass.Paladin + ClassviewModel.SelectedClass.Ranger + ClassviewModel.SelectedClass.Rogue + ClassviewModel.SelectedClass.Sorcerer + ClassviewModel.SelectedClass.Warlock + ClassviewModel.SelectedClass.Wizard;
+            return totallevel;
         }
         public void SetSpellbookFields()
         {
@@ -202,7 +240,65 @@ namespace DnDCMS.View
             }
             return query;
         }
+        public decimal StrengthModifier(decimal strength)
+        {
+            decimal strengthmod;
 
+            strengthmod = strength / 2 - 5;
+            strengthmod = Math.Floor(strengthmod);
 
+            return strengthmod;
+
+        }
+        public decimal DexModifier(decimal dex)
+        {
+            decimal dexmod;
+
+            dexmod = dex / 2 - 5;
+            dexmod = Math.Floor(dexmod);
+
+            return dexmod;
+
+        }
+        public decimal ConModifier(decimal con)
+        {
+            decimal conmod;
+
+            conmod = con / 2 - 5;
+            conmod = Math.Floor(conmod);
+
+            return conmod;
+
+        }
+        public decimal IntModifier(decimal intelligence)
+        {
+            decimal intmod;
+
+            intmod = intelligence / 2 - 5;
+            intmod = Math.Floor(intmod);
+
+            return intmod;
+
+        }
+        public decimal WisModifier(decimal wis)
+        {
+            decimal wismod;
+
+            wismod = wis / 2 - 5;
+            wismod = Math.Floor(wismod);
+
+            return wismod;
+
+        }
+        public decimal ChaModifier(decimal cha)
+        {
+            decimal chamod;
+
+            chamod = cha / 2 - 5;
+            chamod = Math.Floor(chamod);
+
+            return chamod;
+
+        }
     }
 }
